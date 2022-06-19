@@ -1,23 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import useCustom from "./hook";
+import { BsArrowRight } from "react-icons/bs";
+import { FiRefreshCw } from "react-icons/fi";
 
 function App() {
+  const { frase, author, aleatorio, authorFilter, frasesAuthor } = useCustom();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="barra">
+        <button className="button" onClick={aleatorio}>
+          random
+        </button>
+        <FiRefreshCw style={{ margin: "0px", alignSelf: "center" }} />
+      </div>
+      {frasesAuthor?.length > 0 && (
+        <div style={{ marginTop: "10vh", fontWeight: "bold", fontSize: "5vh" }}>
+          {author}
+        </div>
+      )}
+      {frasesAuthor?.length > 0 ? (
+        frasesAuthor.map((value, index) => (
+          <div className="texto11" key={index}>
+            <div className="texto22">
+              <div className="divFrase">"{value.content}"</div>
+            </div>
+          </div>
+        ))
+      ) : frase ? (
+        <div className="texto">
+          <div className="texto2">
+            <div className="divFrase">"{frase}"</div>
+
+            <div className="divAuthor" onClick={authorFilter}>
+              <div>
+                <p> {author}</p>
+              </div>
+              <div>
+                <BsArrowRight style={{ color: "#ffefd5", fontSize: "6vh" }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <p>Loading... </p>
+      )}
+      {}
     </div>
   );
 }

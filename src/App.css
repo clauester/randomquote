@@ -1,38 +1,76 @@
 .App {
+  font-family: fangsong;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  min-height: calc(100vh - 11vh);
+  font-family: fangsong;
+  background-color: #ffefd5;
+  margin: 0 auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.texto {
+  min-height: calc(100vh - 11vh);
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  align-items: center;
+}
+.texto11 {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 8vh;
+  margin-bottom: 10vh;
+}
+.texto1 {
+  border: 1px solid black;
+}
+.texto2 {
+  text-align: justify;
+  align-items: center;
+  width: 100vh;
+}
+.texto22 {
+  text-align: justify;
+  align-items: center;
+  width: 100vh;
+}
+.divFrase {
+  font-size: 5vh;
+  padding-left: 10vh;
+  border-left: 1vh solid rgb(231, 120, 69);
+}
+.divAuthor {
+  margin-top: 2em;
+  font-size: 4vh;
+
+  padding: 7vh 2vh;
+  margin-left: 10vh;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.button {
+  height: 5vh;
+  border: 0;
+  background: none;
+  font-family: fangsong;
+  font-size: 3.5vh;
+  cursor: pointer;
+}
+.barra {
+  text-align: center;
+  display: flex;
+  justify-content: end;
+  margin-right: 5vh;
+  margin-top: 5vh;
+}
+.divAuthor:hover {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background: rgb(39, 36, 36);
+  transition: 0.3s;
 }
